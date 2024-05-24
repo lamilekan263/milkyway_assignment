@@ -1,0 +1,43 @@
+Here's a step-by-step guide:
+1. Set up a new Next.js project using Turborepo for monorepo management(Tailwind config).
+2. Create a package within the monorepo for the wallet logic. 
+    This package will handle the connection to the Keplr wallet and all wallet-related functionality.
+3. Implement the wallet connection logic using the Keplr wallet API. 
+    Allow users to connect their Keplr wallet and retrieve their account information, 
+    including their balance on the Osmosis network.
+4. Create a UI component that displays the user's connected account information and balance. 
+    Use Jotai to store the account information globally, making it accessible throughout the application.
+5. Implement the account switching functionality. 
+    When the user switches their account, update the global state using Jotai and 
+    ensure that the entire website reacts to the account switch.
+6. Create a form component for sending transfer transactions. 
+    The form should include input fields for the recipient address(es) and the amount(s) to send. 
+    Add a plus icon that allows the user to dynamically increase the number of addresses to send to.
+7. Implement the transaction signing and sending functionality. 
+    Use the Keplr wallet API to sign the transaction and 
+    the Cosmos SDK (via cosmjs) to send the transaction to the Osmosis network.
+8. Simulate the transaction before sending it to estimate the required gas.
+    Use the Cosmos SDK's simulation functionality to estimate 
+    the gas based on the aggregated messages in the transaction. Display the estimated gas to the user.
+9. Create a dialog component that displays the status of the transaction to the user. 
+    Update the dialog in real-time as the transaction progresses (e.g., pending, confirmed, failed).
+10. Implement a table component to display the user's previous transactions. 
+    Store the transaction data (txHash, target addresses, amounts, timestamps) 
+    in the browser's IndexedDB using a library like Dexie.js. 
+    Ensure that the transaction data persists through page refreshes.
+11. Use Tanstack Query to handle all data queries and mutations. 
+    This includes fetching the user's balance, previous transactions, and sending new transactions.
+12. Style the UI using Tailwind CSS.
+     Keep the design simple but focus on creating fluid interactions 
+     Animations using custom Tailwind animations or Framer Motion.
+13. (Extra Points) Implement IBC transfer functionality from Osmosis to Cosmos. 
+    Display the user's OSMO balance on the Cosmos network.
+14. (Extra Points) Create a stepper component to display the states of the IBC transfer process.
+15. (Extra Points) Implement IBC hook transfer 
+    using the Packet Forward Middleware (PFM) from Osmosis to Cosmos and back to Osmosis.
+16. Test the application thoroughly to ensure all functionality works as expected. 
+    Handle edge cases and error scenarios gracefully.
+17. Optimize the application for performance. 
+    Ensure that the UI remains responsive and fluid, 
+    even with large amounts of data or complex transactions.
+18. Document the code and provide clear instructions on how to set up and run the application.
