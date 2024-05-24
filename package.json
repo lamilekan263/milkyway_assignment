@@ -9,10 +9,10 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
+    "@repo/typescript-config": "*",
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.11",
-    "@repo/typescript-config": "*",
     "turbo": "latest"
   },
   "engines": {
@@ -22,5 +22,11 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "@tanstack/react-query": "^5.37.1",
+    "@tanstack/react-query-devtools": "^5.37.1",
+    "jotai": "^2.8.1",
+    "react-aria-components": "^1.2.1"
+  }
 }

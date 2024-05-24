@@ -1,9 +1,9 @@
 Here's a step-by-step guide:
-1. Set up a new Next.js project using Turborepo for monorepo management(Tailwind config).
-2. Create a package within the monorepo for the wallet logic. 
-    This package will handle the connection to the Keplr wallet and all wallet-related functionality.
-3. Implement the wallet connection logic using the Keplr wallet API. 
-    Allow users to connect their Keplr wallet and retrieve their account information, 
+1. Set up a new Next.js project using Turborepo for monorepo management(Tailwind config).✅
+2. Create a package within the monorepo for the wallet logic. ✅
+    This package will handle the connection to the Keplr wallet and all wallet-related functionality.✅
+3. Implement the wallet connection logic using the Keplr wallet API. ✅
+    Allow users to connect their Keplr wallet and retrieve their account information, ✅
     including their balance on the Osmosis network.
 4. Create a UI component that displays the user's connected account information and balance. 
     Use Jotai to store the account information globally, making it accessible throughout the application.
