@@ -1,13 +1,13 @@
 // packages/wallet/src/wallet.ts
 
-import { StargateClient,SigningCosmWasmClient } from '@cosmjs/stargate';
+import { StargateClient, SigningCosmWasmClient } from '@cosmjs/stargate';
 import { Window as KeplrWindow } from "@keplr-wallet/types";
 
 declare global {
   interface Window extends KeplrWindow {}
 }
 
-export async function connectKeplr(): Promise<SigningCosmosClient> {
+export async function connectKeplr(): Promise<SigningCosmWasmClient> {
   if (!window.keplr) {
     throw new Error("Keplr extension not found");
   }
@@ -20,4 +20,13 @@ export async function connectKeplr(): Promise<SigningCosmosClient> {
   );
 
   return {client, accounts};
+}
+
+
+export async function getBalance(
+  client: SigningCosmWasmClient,
+  address: string
+): Promise<string> {
+    const balance = await client.getBalance(address, "uosmo");
+  return balance.amount;
 }
